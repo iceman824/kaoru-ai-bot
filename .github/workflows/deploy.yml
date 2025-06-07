@@ -18,12 +18,11 @@ jobs:
         with:
           python-version: '3.10'
 
-    - name: Install dependencies
-  run: echo "No dependencies to install"
-
-      - name: Deploy to Railway
-  env:
-    RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-  run: |
-    railway login --token $RAILWAY_TOKEN
-    railway up --service eloquent-hope
+      - name: Install dependencies
+      # - run: pip install -r requirements.txt
+             - name: Deploy to Railway
+              env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          curl -fsSL https://railway.app/install.sh | sh
+          railway up --service eloquent-hope   
