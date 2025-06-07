@@ -20,7 +20,7 @@ jobs:
               
       - name: Deploy to Railway
         env:
-            RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+            RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }
         run: |
             railway login --token $RAILWAY_TOKEN
             railway up --service eloquent-hope
