@@ -7,8 +7,8 @@ import asyncio
 
 # --- Настройки ---
 
-TELEGRAM_TOKEN = 'ВСТАВЬ_СЮДА_ТВОЙ_TELEGRAM_TOKEN'
-OPENROUTER_API_KEY = 'ВСТАВЬ_СЮДА_ТВОЙ_OPENROUTER_API_KEY'
+TELEGRAM_TOKEN = '7922240103:AAHUeOrzWs71jlMYL8H-DMPSM7_xa8hPepg'
+OPENROUTER_API_KEY = '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'
 
 # --- Конфигурация OpenAI / OpenRouter ---
 openai.api_base = "https://openrouter.ai/api/v1"
