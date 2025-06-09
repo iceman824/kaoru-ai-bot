@@ -1,12 +1,12 @@
-name: Test Build Only (No Deploy, Railway AutoDeploy used)
+name: Deploy KaoruAI Bot to Railway
 
 on:
   push:
     branches:
-      - main  # при любом пуше в main запускается build
+      - main  # при любом пуше в main запускается деплой
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,4 +18,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Опционально: ты можешь добавить сюда тесты или линтеры, если хочешь
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          railway up --service kaoru-ai-bot
