@@ -25,4 +25,4 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          railway up --service kaoru-ai-bot
+          railway up --service 366bcb18-f46a-48c5-9e4c-887c174edf13
