@@ -3,7 +3,7 @@ name: Deploy KaoruAI Bot to Railway
 on:
   push:
     branches:
-      - main
+      - main  # при любом пуше в main запускается деплой
 
 jobs:
   deploy:
@@ -24,4 +24,4 @@ jobs:
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: railway up --service "kaoru-ai-bot"
+        run: railway up
